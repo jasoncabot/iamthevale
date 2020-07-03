@@ -39,7 +39,8 @@ const App = () => {
         <h1 className="">I am&nbsp;<span className="iam" ref={animatedText}>{textItems[textIndex]}</span></h1>
         <div className="mt-5">
           <p className="text-muted">Create your own and share your story</p>
-          <a href="" className="btn btn-lg btn-primary mr-2" data-toggle="modal" data-target="#captureStory">I am ...</a>
+
+          <button type="button" className="btn btn-lg btn-primary mr-2" data-toggle="modal" data-target="#captureStory">I am ...</button>
           <a href="/about" className="btn btn-lg btn-secondary">Learn more</a>
 
           <div className="modal fade" id="captureStory" tabIndex="-1" role="dialog" aria-labelledby="story capture form"
