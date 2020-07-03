@@ -1,0 +1,8 @@
+.card {
+    text-align: left;
+    background: linear-gradient(320deg,#333333,#414243);
+}
+
+.card .card-text {
+    font-size: larger;
+}
