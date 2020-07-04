@@ -1,7 +1,12 @@
 {
   "IsEncrypted": true,
   "Values": {
-    "FUNCTIONS_WORKER_RUNTIME": "CfDJ8KTrheenSx1PmxqDhXX3A1tL5zHoDBKp7XZvsQg+t0YcWsid0rIIQ2Yrxyy0kyDHJT0YA2e7ybuAzF8G4jJuSD+4qjqmntidbdytu4ofEtCKlviFWRN8e3jkkCTHwFLQQw=="
+    "FUNCTIONS_WORKER_RUNTIME": "CfDJ8KTrheenSx1PmxqDhXX3A1tL5zHoDBKp7XZvsQg+t0YcWsid0rIIQ2Yrxyy0kyDHJT0YA2e7ybuAzF8G4jJuSD+4qjqmntidbdytu4ofEtCKlviFWRN8e3jkkCTHwFLQQw==",
+    "COSMOS_ENDPOINT": "CfDJ8KTrheenSx1PmxqDhXX3A1vc4ADvaygJrn2+uDsX0aA2+WHfrotxhukYuHx28xfb7FHaMD3mJxvcL5N0BqVPElRgSkTPmtt7XSTmf9DuEPl7y4CX1z0hFRS5rT5zXpAXIR8Qb9b+B9LmIvMh9gvEOJ4kXKWkmREI0ceK5vjkwcZi",
+    "COSMOS_KEY": "CfDJ8KTrheenSx1PmxqDhXX3A1v6C7o59q0BYlINLWPqxS1ykTqIdYeJoOZAP/09TksjTZqtKUzJoWordhDVr4596xM8PYdZNIi2kT9xb2CrSw1xRJadmf+1Rw21M+2WZvQfFkCfcwXh7+BE/ZqvHBwnXd+OP/z7pQ6iuo6ZGD0wGg46+fCwjWrjcx+4FODU5akaTXoKJTY/jcQQzFcAuzL6W41Ue5xXz3E9aSOtmleH7SZ/"
   },
-  "ConnectionStrings": {}
+  "ConnectionStrings": {},
+  "Host": {
+    "CORS": "http://localhost:3000"
+  }
 }

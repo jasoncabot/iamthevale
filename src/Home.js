@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [textIndex, setTextIndex] = useState(0);
-    const [textItems] = useState(['the vale', 'a person']);
+    const [textItems, setTextItems] = useState(['the vale', 'a person']);
+    const [loadingState, setLoadingState] = useState('');
 
     const animatedText = useRef(null);
 
@@ -22,6 +23,29 @@ const Home = () => {
         element.addEventListener("animationiteration", transitionToNextItem, false);
         return () => { element.removeEventListener("animationiteration", transitionToNextItem); }
     }, [animatedText, textIndex, textItems.length]);
+
+    useEffect(() => {
+        const makeRequest = async () => {
+            const options = {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+            fetch(`${process.env.REACT_APP_API}/stories?kind=titles`, options)
+                .then(response => response.json())
+                .then(items => { return items.map(i => i.title) })
+                .then(response => {
+                    setLoadingState('loaded');
+                    setTextItems(response);
+                })
+                .catch(err => {
+                    setLoadingState('failed');
+                });
+        };
+        if (loadingState !== '') return;
+        makeRequest();
+    }, [loadingState]);
 
     return (
         <main role="main" className="inner content mt-auto">

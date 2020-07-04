@@ -1,15 +1,14 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './StoryList.css';
 
-const Card = ({ title, body }) => {
+const Card = ({ title, date }) => {
     return (
         <div className="card">
             <div className="card-body">
                 <h4>I am&nbsp;<strong>{title}</strong></h4>
-                <p className="card-text">{body}</p>
-                <p className="card-text"><small className="text-muted">Submitted 12 hours ago from UK</small></p>
+                <p className="card-text"><small className="text-muted">Submitted {new Date(date).toLocaleDateString()}</small></p>
             </div>
         </div>
     );
@@ -17,95 +16,43 @@ const Card = ({ title, body }) => {
 
 const StoryList = ({ kind }) => {
 
-    const [stories] = useState([
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-        {
-            title: 'a person',
-            story: 'letting you know how I describe myself'
-        },
-    ]);
+    const [stories, setStories] = useState([]);
+    const [loadingState, setLoadingState] = useState('');
+
+    useEffect(() => {
+        const makeRequest = async () => {
+            const options = {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+            fetch(`${process.env.REACT_APP_API}/stories?kind=${kind}`, options)
+                .then(response => response.json())
+                .then(response => {
+                    setLoadingState('loaded');
+                    setStories(response);
+                })
+                .catch(err => {
+                    setLoadingState('failed');
+                });
+        };
+        if (loadingState !== '') return;
+        makeRequest();
+    }, [loadingState, kind]);
 
     return (
         <div>
             <h2>Latest stories</h2>
-        <div className="card-columns mt-5">
-            {stories.map((card, index) => {
-                return (
-                    <Card key={index} title={card.title} body={card.story} />
-                );
-            })}
-        </div>
+            <div className="card-columns mt-5">
+                {stories.map((card, index) => {
+                    return (
+                        <Card key={index} title={card.title} date={card.createdAt} />
+                    );
+                })}
+            </div>
         </div>
     );
-
-
 }
 
 export default StoryList;

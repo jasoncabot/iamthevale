@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/jasoncabot/iamthevale/tree/master/api/lib/story.json",
+    "type": "object",
+    "title": "Story entity",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "title",
+        "createdAt"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The story ID"
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40,
+            "title": "The story title"
+        },
+        "createdAt": {
+            "$id": "#/properties/createdAt",
+            "type": "string",
+            "format": "date-time",
+            "title": "Date it was created"
+        },
+        "_rid": {
+            "type": "string"
+        },
+        "_self": {
+            "type": "string"
+        },
+        "_etag": {
+            "type": "string"
+        },
+        "_ts": {
+            "type": "number"
+        },
+        "_attachments": {
+            "type": "string"
+        }
+    }
+}
