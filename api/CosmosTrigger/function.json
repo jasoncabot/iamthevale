@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "COSMOS_CONNECTION_STRING",
+      "databaseName": "IAmTheVale",
+      "collectionName": "stories",
+      "createLeaseCollectionIfNotExists": true
+    },
+    {
+      "type": "signalR",
+      "name": "signalRStories",
+      "hubName": "iamthevale",
+      "connectionStringSetting": "SIGNALR_CONNECTION_STRING",
+      "direction": "out"
+    }
+  ]
+}

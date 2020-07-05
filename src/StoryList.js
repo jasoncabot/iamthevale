@@ -14,7 +14,7 @@ const Card = ({ title, date }) => {
     );
 };
 
-const StoryList = ({ kind }) => {
+const StoryList = ({ connection, kind }) => {
 
     const [stories, setStories] = useState([]);
     const [loadingState, setLoadingState] = useState('');
@@ -40,6 +40,14 @@ const StoryList = ({ kind }) => {
         if (loadingState !== '') return;
         makeRequest();
     }, [loadingState, kind]);
+
+    useEffect(() => {
+        if (!connection) return;
+        connection.on('newStory', data => {
+            setStories([data].concat(stories));
+        })
+        return () => connection.off('newStory');
+    }, [connection, stories])
 
     return (
         <div>

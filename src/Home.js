@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import LeaveCommentForm from './LeaveCommentForm';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({ connection }) => {
     const [textIndex, setTextIndex] = useState(0);
     const [textItems, setTextItems] = useState(['the vale']);
     const [loadingState, setLoadingState] = useState('');
@@ -46,6 +46,14 @@ const Home = () => {
         if (loadingState !== '') return;
         makeRequest();
     }, [loadingState]);
+
+    useEffect(() => {
+        if (!connection) return;
+        connection.on('newStory', data => {
+            setTextItems([data.title].concat(textItems));
+        })
+        return () => connection.off('newStory');
+    }, [connection, textItems])
 
     return (
         <main role="main" className="inner content mt-auto">
