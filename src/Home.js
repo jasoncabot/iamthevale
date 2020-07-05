@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [textIndex, setTextIndex] = useState(0);
-    const [textItems, setTextItems] = useState(['the vale', 'a person']);
+    const [textItems, setTextItems] = useState(['the vale']);
     const [loadingState, setLoadingState] = useState('');
 
     const animatedText = useRef(null);
@@ -37,7 +37,7 @@ const Home = () => {
                 .then(items => { return items.map(i => i.title) })
                 .then(response => {
                     setLoadingState('loaded');
-                    setTextItems(response);
+                    setTextItems(['the vale'].concat(response));
                 })
                 .catch(err => {
                     setLoadingState('failed');
