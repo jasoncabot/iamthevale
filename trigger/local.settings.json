@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": true,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "CfDJ8KTrheenSx1PmxqDhXX3A1tL5zHoDBKp7XZvsQg+t0YcWsid0rIIQ2Yrxyy0kyDHJT0YA2e7ybuAzF8G4jJuSD+4qjqmntidbdytu4ofEtCKlviFWRN8e3jkkCTHwFLQQw==",
+    "COSMOS_CONNECTION_STRING": "CfDJ8KTrheenSx1PmxqDhXX3A1u5c8a4tForrUdWQKTCwyG27E8ORYey3Ft4vz/7mNgA7ttWV6bWi7nKIw96oWm1KkzhlFKe7RlOU2DB8kTPyyDkPeFO4arvyFYYuANSaYStzfGIwkl042tfk1Ku6xL1RTHNM2fD5Gt+TacWjQt30XMGmHXiNQK/qBN1MnpPjJEaR/l9peRfT5skOgsozHkpu+GeHSA9lisAQjFBLVDywuDLLDoAuWA4AoyKNzBpHb4WY2GC/MF5FfUgC5F1qNUqGPwelYc1Q4/JRXdoZxNE7zGCEp2S8dBShNRoLj90xPZusHkLKs60rb+IWrPNu5w1Kpk=",
+    "SIGNALR_CONNECTION_STRING": "CfDJ8KTrheenSx1PmxqDhXX3A1swir7/6DurLI/Ld67klWqtJ+jbrSOBeYGL6fmqg1bhRWAVVvmDkH/XM1S2/xJiNgAX/jxYJ5MzMbQJ/oSt70wnEg5C9ljGXcnLsZrwaNougtCe5tisP5Nl5q4odQUJEZ8aGsH1ZKvQCSzdDYkmSkfPgJVVXC7n0UrXfk6kZQ/+LkiABShHIR4jypzFAK1wJPQOH8IwqtGe0/8NwQXgI/bVc2kKxCRMGqRleNtyQyf4WIPtuVgyt/0+VoDdRimkqjQ=",
+    "AzureWebJobsStorage": "CfDJ8KTrheenSx1PmxqDhXX3A1t+UX9fNafkivu3+nfAgHmTG1uvyEPk6IgAILNCExnZapyrtqKSYcvWoj2TFWo1OPvDxPLffAym9k54Uv3RhF2FrC+2dXokG9+APpg2V6Wa/p0Z/Nfmein/52UhI1xGzCM="
+  },
+  "ConnectionStrings": {},
+  "Host": {
+    "CORS": "http://localhost:3000"
+  }
+}
