@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 api/node_modules
+trigger/node_modules
 api/obj
