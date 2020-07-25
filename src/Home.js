@@ -59,7 +59,7 @@ const Home = ({ connection }) => {
         <main role="main" className="inner content mt-auto">
             <h1>I am&nbsp;<span className="iam" ref={animatedText}>{textItems[textIndex]}</span></h1>
             <div className="mt-5">
-                <p className="text-muted">Create your own and share your story</p>
+                <p>Create your own and share your story</p>
 
                 <button type="button" className="btn btn-lg btn-primary mr-2" data-toggle="modal" data-target="#captureStory">Share</button>
                 <Link to="/about" className="btn btn-lg btn-secondary">Learn more</Link>

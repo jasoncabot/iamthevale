@@ -56,7 +56,7 @@ const App = () => {
 
       <footer className="mastfoot mt-auto">
         <div className="inner">
-          <p className="text-muted">A digital inclusion project made with <span role="img" aria-label="love">❤️</span></p>
+          <p>A digital inclusion project made with <span role="img" aria-label="love">❤️</span></p>
         </div>
       </footer>
     </Router>

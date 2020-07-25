@@ -8,7 +8,7 @@ const Card = ({ title, date }) => {
         <div className="card">
             <div className="card-body">
                 <h4>I am&nbsp;<strong>{title}</strong></h4>
-                <p className="card-text"><small className="text-muted">Submitted {new Date(date).toLocaleDateString()}</small></p>
+                <p className="card-text"><small>Submitted {new Date(date).toLocaleDateString()}</small></p>
             </div>
         </div>
     );
